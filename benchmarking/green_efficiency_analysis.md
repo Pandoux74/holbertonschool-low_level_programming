@@ -1,0 +1,21 @@
+Green Efficiency Analysis
+Measurement Methodology
+The experiment recorded execution times for two C programs: baseline_loop and comparison_algorithms. For baseline_loop, three runs were recorded, each reporting 100,000,000 iterations. The measured execution times were 0.173609, 0.172415, and 0.169304 seconds. To summarize these runs, I calculated the arithmetic mean by adding the three times and dividing by three. I also compared the minimum and maximum readings to describe the variation between runs. These figures come from the recorded baseline_loop-metrics.md output.
+
+For comparison_algorithms, the available output provides one timing breakdown: BUILD_DATA took 0.000206 seconds, PROCESS took 0.000308 seconds, REDUCE took 0.000098 seconds, and the reported TOTAL was 0.000614 seconds. I used these recorded values directly. No electrical power or energy measurements were provided, so the analysis distinguishes execution time from energy consumption.
+Observed Performance Differences
+The average baseline_loop execution time was (0.173609 + 0.172415 + 0.169304) / 3 = 0.171776 seconds. The fastest recorded run was 0.169304 seconds, and the slowest was 0.173609 seconds, a difference of 0.004305 seconds. The variation shows that the measured duration was not exactly identical across the three runs, even though each run reported the same iteration count.
+
+In the comparison_algorithms output, PROCESS was the longest recorded phase at 0.000308 seconds. It accounted for approximately 50.2% of the reported total (0.000308 / 0.000614 × 100). BUILD_DATA accounted for about 33.6%, while REDUCE accounted for about 16.0%. The sum of the displayed phase timings is 0.000612 seconds, which differs from the displayed total by 0.000002 seconds. The available output does not establish the cause of this small difference.
+
+Although the total time for comparison_algorithms is numerically smaller than the baseline_loop times, this alone does not prove that its algorithm is more efficient. The supplied results do not establish that both programs perform equivalent work on equivalent inputs.
+Relation Between Runtime and Energy Consumption
+Execution time indicates how long the measured work took, but it is not itself a measurement of energy consumption. Energy is calculated from power over time: for constant power, energy in joules equals power in watts multiplied by time in seconds. Therefore, a shorter execution time would correspond to lower energy consumption only if average power remained the same. The recorded outputs do not include power readings, processor energy counters, or measured joules. Consequently, these results cannot establish which program consumed less energy.
+
+The timing breakdown can still identify where runtime is spent. In the recorded comparison_algorithms run, the PROCESS phase occupied the largest share of the measured total. This makes it a reasonable phase to examine first when investigating runtime, but no energy savings can be quantified from these measurements.
+Limitations of the Experiment
+Only three baseline_loop runs and one comparison_algorithms timing breakdown are shown. The provided records do not specify hardware configuration, compiler optimization flags, measurement resolution, or background system activity. They also do not demonstrate equivalent workloads across the two programs. These gaps prevent a controlled cross-program performance comparison.
+
+The reported times are very short, especially for comparison_algorithms, so additional repeated measurements would help characterize variability. Most importantly, without direct energy or power measurements, any conclusion about actual energy efficiency would be unsupported.
+Practical Engineering Takeaway
+The main lesson is to measure before optimizing and to distinguish observed results from assumptions. Repeating the baseline_loop measurement provided a mean and a visible range. Breaking comparison_algorithms into phases identified PROCESS as the largest recorded time component. A stronger next experiment would repeat both programs under documented, comparable conditions and record power or energy alongside runtime. Only then could I assess whether a runtime improvement also produces an energy improvement.
