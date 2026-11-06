@@ -21,7 +21,7 @@ int main(void)
 	printf("Choice: ");
 	scanf("%d", &choice);
 
-	if (choice == 2)
+	if (choice == 3)
 	{
 		printf("A: ");
 		scanf("%d", &A);
@@ -29,7 +29,7 @@ int main(void)
 		printf("B: ");
 		scanf("%d", &B);
 
-		printf("Result: %d\n", A - B);
+		printf("Result: %d\n", A * B);
 	}
 
 	return (0);
