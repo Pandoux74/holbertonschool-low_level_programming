@@ -1,0 +1,1 @@
+This project focuses on dynamic memory allocation in C using malloc and free.
