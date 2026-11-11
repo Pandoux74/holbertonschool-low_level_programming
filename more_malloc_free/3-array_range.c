@@ -12,28 +12,26 @@
 int *array_range(int min, int max)
 {
 	int *array;
-	size_t size;
+	size_t count;
 	size_t i;
-	long long count;
 
 	if (min > max)
 		return (NULL);
 
-	count = (long long)max - min + 1;
+	count = (size_t)((unsigned int)max - (unsigned int)min) + 1;
 
-	if ((unsigned long long)count > SIZE_MAX / sizeof(int))
+	if (count == 0 || count > SIZE_MAX / sizeof(int))
 		return (NULL);
 
-	size = (size_t)count;
-	array = malloc(size * sizeof(int));
+	array = malloc(count * sizeof(int));
 
 	if (array == NULL)
 		return (NULL);
 
 	i = 0;
-	while (i < size)
+	while (i < count)
 	{
-		array[i] = (int)((long long)min + i);
+		array[i] = (int)((unsigned int)min + (unsigned int)i);
 		i++;
 	}
 
