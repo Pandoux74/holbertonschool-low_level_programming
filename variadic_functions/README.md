@@ -1,0 +1,16 @@
+# Variadic Functions
+
+This project is part of the Holberton School low-level programming curriculum.
+
+## Description
+
+This project introduces variadic functions in C using the stdarg.h library.
+
+## Tasks
+
+### 0. Beauty is variable, ugliness is constant
+
+Write a function that returns the sum of all its parameters.
+
+- Prototype: int sum_them_all(const unsigned int n, ...);
+- Return 0 if n is 0.
