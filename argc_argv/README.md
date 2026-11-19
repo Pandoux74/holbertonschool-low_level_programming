@@ -1,0 +1,1 @@
+This project introduces command-line arguments in C using argc and argv.
