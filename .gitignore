@@ -1,0 +1,10 @@
+# Fichiers exécutables de nos exercices
+/argc_argv/args
+/argc_argv/nargs
+/argc_argv/mynameis
+
+/function_pointers/calc
+/function_pointers/print_name
+
+/variadic_functions/print_all
+/variadic_functions/test
