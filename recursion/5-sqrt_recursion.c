@@ -7,7 +7,7 @@
  *
  * Return: The square root, or -1
  */
-static int find_sqrt(int n, int i)
+int find_sqrt(int n, int i)
 {
 	if (i > n / i)
 		return (-1);
